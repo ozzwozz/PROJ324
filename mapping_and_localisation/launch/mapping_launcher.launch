@@ -1,0 +1,12 @@
+<launch>
+	<param name="ProjectFilepath" value="/home/oscar/Documents/catkin_ws/"/>
+
+	<arg name="scan_topic" default="/hokuyo_base/scan"/>
+	<arg name="base_frame" default="/summit_xl_a_base_footprint"/>
+	<arg name="odom_frame" default="/summit_xl_a_odom"/>
+
+	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+		<remap from="scan" to="/hokuyo_base/scan"/>
+		<rosparam file="/home/oscar/Documents/catkin_ws/mapping_and_localisation/params/gmapping_node_params.yaml" command="load"/>
+	</node>
+</launch>

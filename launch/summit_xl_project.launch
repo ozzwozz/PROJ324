@@ -1,0 +1,9 @@
+<launch>
+
+
+	
+	<include file="/home/oscar/Documents/catkin_ws/src/summit_xl_sim/summit_xl_sim_bringup/launch/summit_xls_complete.launch"/>
+	<node name="rviz" pkg="rviz" type="rviz">
+	</node>
+
+</launch>
