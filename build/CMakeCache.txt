@@ -326,7 +326,7 @@ gazebo_msgs_DIR:PATH=/opt/ros/kinetic/share/gazebo_msgs/cmake
 gazebo_ros_DIR:PATH=/opt/ros/kinetic/share/gazebo_ros/cmake
 
 //The directory containing a CMake configuration file for gazebo_ros_control.
-gazebo_ros_control_DIR:PATH=/opt/ros/kinetic/share/gazebo_ros_control/cmake
+gazebo_ros_control_DIR:PATH=gazebo_ros_control_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
@@ -405,7 +405,7 @@ joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cm
 joint_state_controller_DIR:PATH=/opt/ros/kinetic/share/joint_state_controller/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libtransmission_interface_loader_plugins.so
+lib:FILEPATH=/opt/ros/kinetic/lib/librosconsole_bridge.so
 
 //The directory containing a CMake configuration file for map_server.
 map_server_DIR:PATH=/opt/ros/kinetic/share/map_server/cmake
@@ -728,7 +728,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
