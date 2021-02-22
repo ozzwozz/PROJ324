@@ -1,10 +1,5 @@
 <launch>
 
-
-	
-	<include file="/home/oscar/Documents/catkin_ws/src/summit_xl_sim/summit_xl_sim_bringup/launch/summit_xl_complete.launch"/>
-
-	<node name="rviz" pkg="rviz" type="rviz">
-	</node>
-
+	<include file="/home/oscar/Documents/catkin_ws/mapping_and_localisation/launch/mapping_launcher.launch"/>
+	<include file="/home/oscar/Documents/catkin_ws/image_processing/target_tracker.launch"/>
 </launch>

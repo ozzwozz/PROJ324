@@ -34,7 +34,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=
+CATKIN_WHITELIST_PACKAGES:STRING=image_processing
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -301,6 +301,9 @@ controller_manager_msgs_DIR:PATH=/opt/ros/kinetic/share/controller_manager_msgs/
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
+
 //The directory containing a CMake configuration file for diagnostic_msgs.
 diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
 
@@ -326,7 +329,7 @@ gazebo_msgs_DIR:PATH=/opt/ros/kinetic/share/gazebo_msgs/cmake
 gazebo_ros_DIR:PATH=/opt/ros/kinetic/share/gazebo_ros/cmake
 
 //The directory containing a CMake configuration file for gazebo_ros_control.
-gazebo_ros_control_DIR:PATH=gazebo_ros_control_DIR-NOTFOUND
+gazebo_ros_control_DIR:PATH=/opt/ros/kinetic/share/gazebo_ros_control/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
@@ -398,6 +401,12 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 //The directory containing a CMake configuration file for hardware_interface.
 hardware_interface_DIR:PATH=/opt/ros/kinetic/share/hardware_interface/cmake
 
+//Value Computed by CMake
+image_processing_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/image_processing
+
+//Value Computed by CMake
+image_processing_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/image_processing
+
 //The directory containing a CMake configuration file for joint_limits_interface.
 joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cmake
 
@@ -405,7 +414,7 @@ joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cm
 joint_state_controller_DIR:PATH=/opt/ros/kinetic/share/joint_state_controller/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/librosconsole_bridge.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for map_server.
 map_server_DIR:PATH=/opt/ros/kinetic/share/map_server/cmake
@@ -728,7 +737,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
