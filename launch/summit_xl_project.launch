@@ -1,5 +1,5 @@
 <launch>
 
 	<include file="/home/oscar/Documents/catkin_ws/mapping_and_localisation/launch/mapping_launcher.launch"/>
-	<include file="/home/oscar/Documents/catkin_ws/image_processing/target_tracker.launch"/>
+	<include file="/home/oscar/Documents/catkin_ws/src/target_tracker/launch/target_tracker.launch"/>
 </launch>
