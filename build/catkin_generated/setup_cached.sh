@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/oscar/Documents/catkin_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/oscar/Documents/catkin_ws/build'

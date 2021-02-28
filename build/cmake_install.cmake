@@ -32,7 +32,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   
       if (NOT EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
         file(MAKE_DIRECTORY "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
@@ -42,7 +52,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
       endif()
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/home/oscar/Documents/catkin_ws/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -54,7 +64,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 file(INSTALL DESTINATION "/home/oscar/Documents/catkin_ws/install" TYPE PROGRAM FILES "/home/oscar/Documents/catkin_ws/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/home/oscar/Documents/catkin_ws/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -66,7 +76,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 file(INSTALL DESTINATION "/home/oscar/Documents/catkin_ws/install" TYPE PROGRAM FILES "/home/oscar/Documents/catkin_ws/build/catkin_generated/installspace/env.sh")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/home/oscar/Documents/catkin_ws/install/setup.bash;/home/oscar/Documents/catkin_ws/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -81,7 +91,7 @@ file(INSTALL DESTINATION "/home/oscar/Documents/catkin_ws/install" TYPE FILE FIL
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/home/oscar/Documents/catkin_ws/install/setup.sh;/home/oscar/Documents/catkin_ws/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -96,7 +106,7 @@ file(INSTALL DESTINATION "/home/oscar/Documents/catkin_ws/install" TYPE FILE FIL
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/home/oscar/Documents/catkin_ws/install/setup.zsh;/home/oscar/Documents/catkin_ws/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -111,7 +121,7 @@ file(INSTALL DESTINATION "/home/oscar/Documents/catkin_ws/install" TYPE FILE FIL
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/home/oscar/Documents/catkin_ws/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -126,21 +136,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/oscar/Documents/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_common/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_navigation/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_perception/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_robot_local_control/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_sim/summit_xl_sim/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_sim/summit_xl_sim_bringup/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_pad/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/target_tracker/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_localization/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_control/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_description/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_sim/summit_xl_gazebo/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/moveit/summit_xl_j2s6s200_moveit_config/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/moveit/summit_xl_j2s6s300_moveit_config/cmake_install.cmake")
-  include("/home/oscar/Documents/catkin_ws/build/summit_xl_common/moveit/summit_xl_j2s7s300_moveit_config/cmake_install.cmake")
 
 endif()
 
