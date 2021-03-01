@@ -1,0 +1,3 @@
+<launch>
+	<node name="ImageNode" pkg="target_tracker" type="target_tracker_node" output="screen"/>
+</launch>

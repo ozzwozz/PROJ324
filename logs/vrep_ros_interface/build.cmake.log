@@ -1,0 +1,35 @@
+Not searching for unused variables given on the command line.
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/oscar/Documents/catkin_ws/devel/.private/vrep_ros_interface
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/oscar/Documents/catkin_ws/devel;/opt/ros/kinetic
+[36m--[0m This workspace overlays: /home/oscar/Documents/catkin_ws/devel;/opt/ros/kinetic
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python
+[36m--[0m Using Debian Python package layout
+[36m--[0m Using empy: /usr/bin/empy
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/oscar/Documents/catkin_ws/build/vrep_ros_interface/test_results
+[36m--[0m Found gtest sources under '/usr/src/gmock': gtests will be built
+[36m--[0m Found gmock sources under '/usr/src/gmock': gmock will be built
+[36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
+[36m--[0m catkin 0.7.29
+[36m--[0m BUILD_SHARED_LIBS is on
+[36m--[0m Could NOT find roscpp (missing: roscpp_DIR)
+[36m--[0m Could not find the required component 'roscpp'. The following CMake error indicates that you either need to install the package with the same name or change your environment so that it can be found.
+[31m[1mCMake Error[0m at /opt/ros/kinetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+  Could not find a package configuration file provided by "roscpp" with any
+  of the following names:
+
+    roscppConfig.cmake
+    roscpp-config.cmake
+
+  Add the installation prefix of "roscpp" to CMAKE_PREFIX_PATH or set
+  "roscpp_DIR" to a directory containing one of the above files.  If "roscpp"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:33 (find_package)
+
+
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/oscar/Documents/catkin_ws/build/vrep_ros_interface/CMakeFiles/CMakeOutput.log".
+See also "/home/oscar/Documents/catkin_ws/build/vrep_ros_interface/CMakeFiles/CMakeError.log".
