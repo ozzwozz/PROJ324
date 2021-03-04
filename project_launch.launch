@@ -1,0 +1,4 @@
+<launch>
+	<include file="/home/oscar/Documents/catkin_ws/src/summit_gmapping/launch/mapping_launcher.launch" command="load"/>
+	<include file="/home/oscar/Documents/catkin_ws/src/target_tracker.launch" command="load"/>
+</launch>

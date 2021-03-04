@@ -1,2 +1,2 @@
-target_tracker
+summit_gmapping:target_tracker
 -DCATKIN_DEVEL_PREFIX=/home/oscar/Documents/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/oscar/Documents/catkin_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/oscar/Documents/catkin_ws/install
+
+Name: summit_gmapping
+Description: Description of summit_gmapping
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

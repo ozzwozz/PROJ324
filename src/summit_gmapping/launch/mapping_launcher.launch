@@ -7,6 +7,6 @@
 
 	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
 		<remap from="scan" to="/hokuyo_base/scan"/>
-		<rosparam file="/home/oscar/Documents/catkin_ws/mapping_and_localisation/params/gmapping_node_params.yaml" command="load"/>
+		<rosparam file="/home/oscar/Documents/catkin_ws/src/summit_gmapping/params/gmapping_node_params.yaml" command="load"/>
 	</node>
 </launch>
