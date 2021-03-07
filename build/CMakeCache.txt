@@ -388,6 +388,15 @@ message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for pal_detection_msgs.
+pal_detection_msgs_DIR:PATH=pal_detection_msgs_DIR-NOTFOUND
+
+//Value Computed by CMake
+pal_person_detector_opencv_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/pal_person_detector_opencv
+
+//Value Computed by CMake
+pal_person_detector_opencv_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/pal_person_detector_opencv
+
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
 

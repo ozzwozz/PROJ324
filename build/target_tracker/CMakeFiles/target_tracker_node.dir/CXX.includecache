@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/oscar/Documents/catkin_ws/src/target_tracker/include/load_image.hpp
-ros/ros.h
--
-std_msgs/String.h
--
-opencv2/imgproc/imgproc.hpp
--
-opencv2/highgui/highgui.hpp
--
-image_transport/image_transport.h
--
-cv_bridge/cv_bridge.h
--
-sensor_msgs/image_encodings.h
--
-
 /home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp
 ros/ros.h
 -
@@ -34,8 +18,6 @@ sensor_msgs/image_encodings.h
 opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
--
-load_image.hpp
 -
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
@@ -2181,22 +2163,6 @@ string
 -
 
 /opt/ros/kinetic/include/std_msgs/Header.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/opt/ros/kinetic/include/std_msgs/String.h
 string
 -
 vector
