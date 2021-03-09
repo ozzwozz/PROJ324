@@ -6,11 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp
-ros/ros.h
--
-image_transport/image_transport.h
--
+/home/oscar/Documents/catkin_ws/src/target_tracker/include/face_and_eye.hpp
 cv_bridge/cv_bridge.h
 -
 sensor_msgs/image_encodings.h
@@ -18,6 +14,16 @@ sensor_msgs/image_encodings.h
 opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
+-
+opencv2/objdetect/objdetect.hpp
+-
+ros/ros.h
+-
+image_transport/image_transport.h
+-
+
+/home/oscar/Documents/catkin_ws/src/target_tracker/src/face_and_eye.cpp
+face_and_eye.hpp
 -
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
@@ -983,6 +989,10 @@ opencv2/core.hpp
 -
 vector
 -
+
+/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/objdetect/objdetect.hpp
+opencv2/objdetect.hpp
+/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/objdetect/opencv2/objdetect.hpp
 
 /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/objdetect/objdetect_c.h
 opencv2/core/core_c.h

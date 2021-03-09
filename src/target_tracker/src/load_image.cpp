@@ -46,8 +46,8 @@ public:
       ROS_ERROR("cv_bridge exception: %s", e.what());
       return;
     }
-
-    cv_ptr = thing->face_and_eye_rectangles(cv_ptr);
+    cv::Mat Frame = cv_ptr->image;
+    Frame = thing->face_and_eye_rectangles(Frame);
 
     // Draw an example circle on the video stream
     if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
