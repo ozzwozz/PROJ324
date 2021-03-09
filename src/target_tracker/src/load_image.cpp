@@ -4,6 +4,7 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <face_and_eye.hpp>
 
 static const std::string OPENCV_WINDOW = "Image window";
 
@@ -13,7 +14,7 @@ class ImageConverter
   image_transport::ImageTransport it_;
   image_transport::Subscriber image_sub_;
   image_transport::Publisher image_pub_;
-
+  
 public:
   ImageConverter()
     : it_(nh_)
@@ -33,6 +34,8 @@ public:
 
   void imageCb(const sensor_msgs::ImageConstPtr& msg)
   {
+
+    face_and_eye *thing;
     cv_bridge::CvImagePtr cv_ptr;
     try
     {
@@ -44,9 +47,13 @@ public:
       return;
     }
 
+    cv_ptr = thing->face_and_eye_rectangles(cv_ptr);
+
     // Draw an example circle on the video stream
     if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
+    {
       cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255,0,0));
+    }
 
     // Update GUI Window
     cv::imshow(OPENCV_WINDOW, cv_ptr->image);
