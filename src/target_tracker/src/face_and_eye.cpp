@@ -1,12 +1,16 @@
 #include <face_and_eye.hpp>
 
-cv_bridge::CvImagePtr face_and_eye::face_and_eye_rectangles(const cv_bridge::CvImagePtr frame)
+cv::Mat face_and_eye::face_and_eye_rectangles(cv::Mat Frame)
 {
-  cv::Mat Frame = .toImageMsg();
-  // convert to grey for faster processing
-  //cv::Mat greyFrame = cv::cvtColor(frame, cv::COLOR_RGB2GRAY);
-  // detect people in the current image
-  cv::HOGDescriptor::detectMultiScale(Frame.toImageMsg, foundLocations, foundWeights);
+  //cv::Mat Frame = frame->image;
+  cv::Mat greyFrame;
+  cv::cvtColor(Frame, greyFrame, cv::COLOR_RGB2GRAY);
+  cv::equalizeHist(greyFrame, greyFrame);
+
+  hog.detectMultiScale(Frame, foundLocations, 1.1, 3, 0, cv::Size (30,30), cv::Size(60,60));
+
+
+
   /// draw detections and store location
   for( size_t i = 0; i < foundLocations.size(); i++ )
   {
@@ -14,9 +18,10 @@ cv_bridge::CvImagePtr face_and_eye::face_and_eye_rectangles(const cv_bridge::CvI
     cv::rectangle(Frame, foundLocations[i], cv::Scalar(0,0,255), 3);
     stringstream temp;
     temp << foundWeights[i];
-    //putText(frame, temp.str(),Point(foundLocations[i].x,foundLocations[i].y+50), FONT_HERSHEY_SIMPLEX, 1, Scalar(0,0,255));
+    //putText(Frame, temp.str(),Point(foundLocations[i].x,foundLocations[i].y+50), FONT_HERSHEY_SIMPLEX, 1, Scalar(0,0,255));
     //track.push_back(Point(foundLocations[i].x+foundLocations[i].width/2,foundLocations[i].y+foundLocations[i].height/2));
   }
+
   /// plot the track so far
   //for(size_t i = 1; i < track.size(); i++)
   //{

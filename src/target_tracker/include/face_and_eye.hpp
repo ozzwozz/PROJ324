@@ -7,6 +7,9 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
 
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+
 using namespace std;
 using namespace cv;
 
@@ -16,15 +19,18 @@ class face_and_eye
 
     vector<Rect> foundLocations;
     vector<double> foundWeights;
-
+    //HOGDescriptor hog; // creates the hog descriptor and detector
+    cv::CascadeClassifier hog; // creates the hog descriptor and detector
   protected:
   public:
     face_and_eye()
     {
-      HOGDescriptor hog; // creates the hog descriptor and detector
-      hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
+
+      //hog.winSize = wsize;
+
+      //hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
     }
-    cv_bridge::CvImagePtr face_and_eye_rectangles(const cv_bridge::CvImagePtr frame); // function that marks face and eyes with rectangles
+    cv::Mat face_and_eye_rectangles(cv::Mat frame); // function that marks face and eyes with rectangles
 };
 
 #endif

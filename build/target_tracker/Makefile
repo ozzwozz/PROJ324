@@ -456,6 +456,33 @@ dynamic_reconfigure_generate_messages_py/fast:
 	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make target_tracker/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_py/fast
 
+src/face_and_eye.o: src/face_and_eye.cpp.o
+
+.PHONY : src/face_and_eye.o
+
+# target to build an object file
+src/face_and_eye.cpp.o:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.o
+.PHONY : src/face_and_eye.cpp.o
+
+src/face_and_eye.i: src/face_and_eye.cpp.i
+
+.PHONY : src/face_and_eye.i
+
+# target to preprocess a source file
+src/face_and_eye.cpp.i:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.i
+.PHONY : src/face_and_eye.cpp.i
+
+src/face_and_eye.s: src/face_and_eye.cpp.s
+
+.PHONY : src/face_and_eye.s
+
+# target to generate assembly for a file
+src/face_and_eye.cpp.s:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.s
+.PHONY : src/face_and_eye.cpp.s
+
 src/load_image.o: src/load_image.cpp.o
 
 .PHONY : src/load_image.o
@@ -514,6 +541,9 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... target_tracker_node"
+	@echo "... src/face_and_eye.o"
+	@echo "... src/face_and_eye.i"
+	@echo "... src/face_and_eye.s"
 	@echo "... src/load_image.o"
 	@echo "... src/load_image.i"
 	@echo "... src/load_image.s"
