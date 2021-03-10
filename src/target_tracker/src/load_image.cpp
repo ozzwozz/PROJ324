@@ -14,7 +14,7 @@ class ImageConverter
   image_transport::ImageTransport it_;
   image_transport::Subscriber image_sub_;
   image_transport::Publisher image_pub_;
-  
+
 public:
   ImageConverter()
     : it_(nh_)
@@ -40,6 +40,7 @@ public:
     try
     {
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+      cv::resize(cv_ptr->image, cv_ptr->image, Size(1280,720));
     }
     catch (cv_bridge::Exception& e)
     {
@@ -52,22 +53,27 @@ public:
     // Draw an example circle on the video stream
     if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
     {
-      cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255,0,0));
+      cv::circle(Frame, cv::Point(50, 50), 10, CV_RGB(255,0,0));
     }
 
     // Update GUI Window
-    cv::imshow(OPENCV_WINDOW, cv_ptr->image);
-    cv::waitKey(3);
+    cv::imshow(OPENCV_WINDOW, Frame);
+    waitKey(10);
+    //while(cv::waitKey(30)!='x'){cv::imshow(OPENCV_WINDOW, Frame);};
 
     // Output modified video stream
-    image_pub_.publish(cv_ptr->toImageMsg());
+    //image_pub_.publish(cv_ptr->toImageMsg());
   }
 };
 
 int main(int argc, char** argv)
 {
+  //ros::Rate r(10);
   ros::init(argc, argv, "image_converter");
   ImageConverter ic;
+  while(ros::ok()){
   ros::spin();
+  //r.sleep();
+}
   return 0;
 }

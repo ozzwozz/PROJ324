@@ -49,6 +49,18 @@ target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.o
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/utility.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/version.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/vsx_utils.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/dict.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/dnn.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/dnn.inl.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/layer.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/face_alignment.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facemark.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facemarkAAM.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facemarkLBF.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facerec.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/predict_collector.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/features2d.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann/all_indices.h
@@ -260,6 +272,18 @@ target_tracker/CMakeFiles/target_tracker_node.dir/src/load_image.cpp.o
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/utility.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/version.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/core/vsx_utils.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/dict.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/dnn.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/dnn.inl.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/dnn/layer.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/face_alignment.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facemark.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facemarkAAM.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facemarkLBF.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/facerec.hpp
+ /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/face/predict_collector.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/features2d.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann.hpp
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/flann/all_indices.h
