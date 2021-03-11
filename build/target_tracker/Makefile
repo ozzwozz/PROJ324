@@ -360,6 +360,33 @@ src/load_image.cpp.s:
 	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/load_image.cpp.s
 .PHONY : src/load_image.cpp.s
 
+src/person_detector.o: src/person_detector.cpp.o
+
+.PHONY : src/person_detector.o
+
+# target to build an object file
+src/person_detector.cpp.o:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/person_detector.cpp.o
+.PHONY : src/person_detector.cpp.o
+
+src/person_detector.i: src/person_detector.cpp.i
+
+.PHONY : src/person_detector.i
+
+# target to preprocess a source file
+src/person_detector.cpp.i:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/person_detector.cpp.i
+.PHONY : src/person_detector.cpp.i
+
+src/person_detector.s: src/person_detector.cpp.s
+
+.PHONY : src/person_detector.s
+
+# target to generate assembly for a file
+src/person_detector.cpp.s:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/person_detector.cpp.s
+.PHONY : src/person_detector.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -387,6 +414,9 @@ help:
 	@echo "... src/load_image.o"
 	@echo "... src/load_image.i"
 	@echo "... src/load_image.s"
+	@echo "... src/person_detector.o"
+	@echo "... src/person_detector.i"
+	@echo "... src/person_detector.s"
 .PHONY : help
 
 

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/oscar/Documents/catkin_ws/src/target_tracker/src/face_and_eye.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.o"
   "/home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/load_image.cpp.o"
+  "/home/oscar/Documents/catkin_ws/src/target_tracker/src/person_detector.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/person_detector.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

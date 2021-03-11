@@ -46,7 +46,7 @@ include
 )
 
 ## main script
-add_executable(target_tracker_node src/load_image.cpp include/face_and_eye.hpp src/face_and_eye.cpp)
+add_executable(target_tracker_node src/load_image.cpp include/face_and_eye.hpp src/face_and_eye.cpp include/person_detector.hpp src/person_detector.cpp)
 add_dependencies(target_tracker_node ${target_tracker_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against

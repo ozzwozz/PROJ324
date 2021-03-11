@@ -5,6 +5,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <face_and_eye.hpp>
+#include <person_detector.hpp>
 
 static const std::string OPENCV_WINDOW = "Image window";
 
@@ -36,11 +37,12 @@ public:
   {
 
     face_and_eye *thing;
+    person_detector *p_detector;
     cv_bridge::CvImagePtr cv_ptr;
     try
     {
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-      cv::resize(cv_ptr->image, cv_ptr->image, Size(1280,720));
+      cv::resize(cv_ptr->image, cv_ptr->image, Size(720,1080));
     }
     catch (cv_bridge::Exception& e)
     {
@@ -48,8 +50,8 @@ public:
       return;
     }
     cv::Mat Frame = cv_ptr->image;
-    Frame = thing->face_and_eye_rectangles(Frame);
-
+    //Frame = thing->face_and_eye_rectangles(Frame);
+    Frame = p_detector->person_tracker(Frame);
     // Draw an example circle on the video stream
     if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
     {
