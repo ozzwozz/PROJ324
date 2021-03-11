@@ -42,7 +42,7 @@ public:
     try
     {
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-      cv::resize(cv_ptr->image, cv_ptr->image, Size(720,1080));
+      cv::resize(cv_ptr->image, cv_ptr->image, Size(1080,720));
     }
     catch (cv_bridge::Exception& e)
     {
@@ -52,11 +52,7 @@ public:
     cv::Mat Frame = cv_ptr->image;
     //Frame = thing->face_and_eye_rectangles(Frame);
     Frame = p_detector->person_tracker(Frame);
-    // Draw an example circle on the video stream
-    if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
-    {
-      cv::circle(Frame, cv::Point(50, 50), 10, CV_RGB(255,0,0));
-    }
+    // Draw an example circle on the video streams
 
     // Update GUI Window
     cv::imshow(OPENCV_WINDOW, Frame);

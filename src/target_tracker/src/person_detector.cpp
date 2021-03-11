@@ -13,10 +13,8 @@ cv::Mat person_detector::person_tracker(cv::Mat Frame)
 
   //CRASHES
 
-
-  cv::cvtColor(Frame, greyFrame, cv::COLOR_BGR2GRAY);
-  cv::equalizeHist(greyFrame, greyEqFrame);
-
+  //cv::cvtColor(Frame, greyFrame, cv::COLOR_BGR2GRAY);
+  //cv::equalizeHist(greyFrame, greyEqFrame);
 
   //CRASHES
 
@@ -29,49 +27,31 @@ cv::Mat person_detector::person_tracker(cv::Mat Frame)
 
   hog.detectMultiScale(Frame, foundLocations);
 
-  for (size_t i = 0; i < foundLocations.size(); i++)
-  {
-    cv::Rect r = foundLocations[i];
-    rectangle(Frame, foundLocations[i], cv::Scalar(0, 0, 255), 3);
-  }
+  // for (size_t i = 0; i < foundLocations.size(); i++)
+  // {
+  //   cv::Rect r = foundLocations[i];
+  //   rectangle(Frame, foundLocations[i], cv::Scalar(0, 0, 255), 3);
+  // }
 
   std::vector<cv::Rect> detections;
 
-  //detectPersons(Frame, detections);
+  cv::Point target_center = shirtColour(Frame);
 
-  if ( _imageScaling != 1.0 )
-  {
-    //scaleDetections(detections,1,1);
-  }
+
+  cv::circle(Frame, cv::Point(target_center), 10, CV_RGB(255,255,255), 5);
+
+
   return Frame;
 }
 
-
-void person_detector::scaleDetections(std::vector<cv::Rect>& detections, double scaleX, double scaleY) const
+cv::Point person_detector::shirtColour(cv::Mat Frame)
 {
-  BOOST_FOREACH(cv::Rect& detection, detections)
-  {
-    cv::Rect roi(detection);
-    detection.x      = static_cast<long>(roi.x      * scaleX);
-    detection.y      = static_cast<long>(roi.y      * scaleY);
-    detection.width  = static_cast<long>(roi.width  * scaleX);
-    detection.height = static_cast<long>(roi.height * scaleY);
-  }
-}
-
-void person_detector::detectPersons(const cv::Mat& img,std::vector<cv::Rect>& detections)
-{
-  double start = static_cast<double>(cv::getTickCount());
-
-  // _hogCPU->detectMultiScale(img,
-  //                           detections,
-  //                           0,                //hit threshold: decrease in order to increase number of detections but also false alarms
-  //                           cv::Size(8,8),    //win stride
-  //                           cv::Size(0,0),    //padding 24,16
-  //                           1.02,             //scaling
-  //                           1,                //final threshold
-  //                           false);            //use mean-shift to fuse detections
-
-  double stop = static_cast<double>(cv::getTickCount());
-  ROS_DEBUG_STREAM("Elapsed time in detectMultiScale: " << 1000.0*(stop-start)/cv::getTickFrequency() << " ms");
+  cv::Mat HSVFrame;
+  cv::Mat FilteredFrame;
+  cv::cvtColor(Frame, HSVFrame, cv::COLOR_BGR2HSV);
+  // defined Hue, Saturation, Value
+  cv::inRange(HSVFrame, (0, 107, 137), (120, 255, 13), FilteredFrame);
+  cv::Moments m = cv::moments(FilteredFrame, true);
+  cv::Point target_center(m.m10/m.m00, m.m01/m.m00);
+  return target_center;
 }
