@@ -22,8 +22,8 @@ class person_detector
   private:
     //std::vector<cv::Rect> found;
     std::vector<double> weights;
-    cv::Point shirtColour(cv::Mat Frame);
-
+    cv::Mat shirtColour(cv::Mat Frame);
+    cv::Rect rectangleCheck(cv::Mat Frame, std::vector<cv::Rect> foundLocations);
   public:
     //constructor
     person_detector()
