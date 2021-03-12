@@ -27,11 +27,11 @@ cv::Mat person_detector::person_tracker(cv::Mat Frame)
 
   hog.detectMultiScale(Frame, foundLocations);
 
-  // for (size_t i = 0; i < foundLocations.size(); i++)
-  // {
-  //   cv::Rect r = foundLocations[i];
-  //   rectangle(Frame, foundLocations[i], cv::Scalar(0, 0, 255), 3);
-  // }
+  for (size_t i = 0; i < foundLocations.size(); i++)
+  {
+    cv::Rect r = foundLocations[i];
+    rectangle(Frame, foundLocations[i], cv::Scalar(0, 0, 255), 3);
+  }
 
   std::vector<cv::Rect> detections;
 
@@ -49,8 +49,10 @@ cv::Point person_detector::shirtColour(cv::Mat Frame)
   cv::Mat HSVFrame;
   cv::Mat FilteredFrame;
   cv::cvtColor(Frame, HSVFrame, cv::COLOR_BGR2HSV);
+  //isolate red colours in Frame to find targets T-shirt
   // defined Hue, Saturation, Value
-  cv::inRange(HSVFrame, (0, 107, 137), (120, 255, 13), FilteredFrame);
+  cv::inRange(HSVFrame, (130, 70, 70), (160, 100, 100), FilteredFrame);
+  //use to find center of red mass
   cv::Moments m = cv::moments(FilteredFrame, true);
   cv::Point target_center(m.m10/m.m00, m.m01/m.m00);
   return target_center;

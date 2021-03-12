@@ -23,7 +23,7 @@ class person_detector
     //std::vector<cv::Rect> found;
     std::vector<double> weights;
     cv::Point shirtColour(cv::Mat Frame);
-    
+
   public:
     //constructor
     person_detector()
@@ -39,11 +39,7 @@ class person_detector
 
     }
     cv::Mat person_tracker(cv::Mat Frame);
-    void detectPersons(const cv::Mat& img,
-                     std::vector<cv::Rect>& detections);
 
-  void scaleDetections(std::vector<cv::Rect>& detections,
-                       double scaleX, double scaleY) const;
   protected:
     ros::Time _imgTimeStamp;
     //boost::scoped_ptr<cv::HOGDescriptor> _hogCPU;
