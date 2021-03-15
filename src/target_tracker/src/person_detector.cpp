@@ -52,7 +52,7 @@ cv::Mat person_detector::person_tracker(cv::Mat OriginalFrame)
     //cv::circle(Frame, cv::Point(target_center), 10, CV_RGB(255,255,255), 5);
   //}
 
-  return target_center;
+  return Frame;
 }
 
 cv::Rect person_detector::pixelcount(cv::Mat FilteredFrame, std::vector<cv::Rect> foundLocations)

@@ -43,6 +43,7 @@ public:
     {
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
       cv::resize(cv_ptr->image, cv_ptr->image, Size(1080,720));
+      cv::flip(cv_ptr->image, cv_ptr->image, 0);
     }
     catch (cv_bridge::Exception& e)
     {
