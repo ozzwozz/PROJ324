@@ -9,6 +9,9 @@
 #include <opencv2/dnn/dnn.hpp>
 #include <opencv2/opencv.hpp>
 #include <ros/ros.h>
+#include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
 
 // Boost headers
 #include <boost/scoped_ptr.hpp>
@@ -24,6 +27,8 @@ class person_detector
     std::vector<double> weights;
     cv::Mat shirtColour(cv::Mat Frame);
     cv::Rect rectangleCheck(cv::Mat Frame, std::vector<cv::Rect> foundLocations);
+    cv::Mat imageOverlay(cv::Mat WorkingFrame, cv::Mat FilteredFrame, cv::Mat OriginalFrame);
+    cv::Rect pixelcount(cv::Mat FilteredFrame, std::vector<cv::Rect> foundLocations);
   public:
     //constructor
     person_detector()

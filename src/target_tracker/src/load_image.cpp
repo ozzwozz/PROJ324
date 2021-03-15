@@ -52,7 +52,6 @@ public:
     cv::Mat Frame = cv_ptr->image;
     //Frame = thing->face_and_eye_rectangles(Frame);
     Frame = p_detector->person_tracker(Frame);
-    // Draw an example circle on the video streams
 
     // Update GUI Window
     cv::imshow(OPENCV_WINDOW, Frame);
@@ -69,9 +68,10 @@ int main(int argc, char** argv)
   //ros::Rate r(10);
   ros::init(argc, argv, "image_converter");
   ImageConverter ic;
-  while(ros::ok()){
-  ros::spin();
+  while(ros::ok())
+  {
+    ros::spinOnce();
   //r.sleep();
-}
+  }
   return 0;
 }
