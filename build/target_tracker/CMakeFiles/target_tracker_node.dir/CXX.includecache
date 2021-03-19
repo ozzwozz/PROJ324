@@ -6,30 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/oscar/Documents/catkin_ws/src/target_tracker/include/face_and_eye.hpp
-cv_bridge/cv_bridge.h
--
-sensor_msgs/image_encodings.h
--
-opencv2/imgproc/imgproc.hpp
--
-opencv2/highgui/highgui.hpp
--
-opencv2/objdetect/objdetect.hpp
--
-opencv2/opencv_modules.hpp
--
-opencv2/face.hpp
--
-opencv2/dnn/dnn.hpp
--
-opencv2/opencv.hpp
--
-ros/ros.h
--
-image_transport/image_transport.h
--
-
 /home/oscar/Documents/catkin_ws/src/target_tracker/include/person_detector.hpp
 opencv2/imgproc/imgproc.hpp
 -
@@ -60,23 +36,9 @@ boost/foreach.hpp
 vector
 -
 
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp
-ros/ros.h
--
-image_transport/image_transport.h
--
-cv_bridge/cv_bridge.h
--
-sensor_msgs/image_encodings.h
--
-opencv2/imgproc/imgproc.hpp
--
-opencv2/highgui/highgui.hpp
--
-face_and_eye.hpp
--
+/home/oscar/Documents/catkin_ws/src/target_tracker/src/person_detector.cpp
 person_detector.hpp
--
+/home/oscar/Documents/catkin_ws/src/target_tracker/src/person_detector.hpp
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h
