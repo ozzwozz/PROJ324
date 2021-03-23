@@ -1,0 +1,8 @@
+prefix=/home/oscar/Documents/catkin_ws/install
+
+Name: keyboard_movement
+Description: Description of keyboard_movement
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

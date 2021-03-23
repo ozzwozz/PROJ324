@@ -97,7 +97,8 @@ std::vector<cv::Point> person_detector::MakeEstimation(std::vector<cv::Point> re
 
   cv::Point temp;
 
-  if (rel_movement_size > 0){
+  if (rel_movement_size > 0)
+  {
     for(int x = 0; x < rel_movement_size; x++)
     {
       temp += relative_movement[x];
