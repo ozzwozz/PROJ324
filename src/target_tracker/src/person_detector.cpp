@@ -40,19 +40,35 @@ cv::Mat person_detector::person_tracker(cv::Mat OriginalFrame)
       rectangle(Frame, Target_Box, cv::Scalar(255, 0, 0), 3);//BGR
     }
 
+    static std::vector<cv::Point> predictive_points;
+    static int predictionTracker;
     //get centre of target person
     cv::Point temp = GetTargetCenter(Target_Box);
     if (temp.x != 0 && temp.y != 0)
     {
       target_center.push_back(temp);
-      Frame = MovementLine(target_center, Frame);
+      Frame = MovementLine(target_center, Frame, cv::Scalar(255, 0, 0));
+
+      std::vector<cv::Point> RateofMovement = CalculateRateOfMovement(target_center);
+      predictive_points.clear();
+      predictive_points = MakeEstimation(RateofMovement, temp);
+      predictionTracker = 0;
     }
     else
     {
-      std::vector<cv::Point> RateofMovement ;//= CalculateRateOfMovement(target_center);
-      std::vector<cv::Point> predictive_points = MakeEstimation(RateofMovement, temp);
-      Frame = MovementLine(RateofMovement, Frame);
+      if (predictionTracker >= 0 && predictionTracker <= 5)
+      {
+        if(predictive_points.size() > predictionTracker )
+        {
+          //cv::rectangle(Frame, predictive_points[predictionTracker], cv::Scalar(0, 255, 0), 3);//BGR
+          circle(Frame, cv::Point(predictive_points[predictionTracker]), 5, cv::Scalar(255, 0, 0), 3);//BGR
+          predictionTracker++;
+        }
+      }
     }
+
+    Frame = MovementLine(target_center, Frame, cv::Scalar(255, 0, 0));
+    Frame = MovementLine(predictive_points, Frame, cv::Scalar(0, 255, 0));
 
   return Frame;
 }
@@ -60,10 +76,15 @@ cv::Mat person_detector::person_tracker(cv::Mat OriginalFrame)
 std::vector<cv::Point> person_detector::CalculateRateOfMovement(std::vector<cv::Point> KnownPoints /*Timestamp for points*/)
 {
   std::vector<cv::Point> RateofMovement;
-  for(int x = 1; x < 5; x++)
+  int KnownPoints_size = KnownPoints.size();
+
+  if(KnownPoints_size>=2)
   {
-    //this line is to the effect of change in distance / change in time = relative speed
-    RateofMovement[x] = ((KnownPoints[x] - KnownPoints[x-1])/*/(timestamp[x] - timestamp[x-1])*/);
+    for (int x = 0; x < std::min(5, KnownPoints_size); x++)
+    {
+      //this line is to the effect of change in position / change in time = relative speed
+      RateofMovement.push_back(KnownPoints[KnownPoints_size-(x+1)] - KnownPoints[KnownPoints_size-(x+2)])/*/(timestamp[x] - timestamp[x-1])*/;
+    }
   }
   return RateofMovement;
 }
@@ -71,11 +92,23 @@ std::vector<cv::Point> person_detector::CalculateRateOfMovement(std::vector<cv::
 std::vector<cv::Point> person_detector::MakeEstimation(std::vector<cv::Point> relative_movement, cv::Point LastPrecise)
 {
   std::vector<cv::Point> Predictive_Points;
-  Predictive_Points[0] = cv::Point((LastPrecise.x + relative_movement[0].x), (LastPrecise.y + relative_movement[0].y));
-  //attempts to predict 5 future points of movement
-  for(int x = 1; x < 3; x++)
-  {
-    Predictive_Points[x] = cv::Point(Predictive_Points[x].x + relative_movement[x].x, Predictive_Points[x].y + relative_movement[x].y);
+  int rel_movement_size = relative_movement.size();
+  Predictive_Points.push_back(LastPrecise);
+
+  cv::Point temp;
+
+  if (rel_movement_size > 0){
+    for(int x = 0; x < rel_movement_size; x++)
+    {
+      temp += relative_movement[x];
+    }
+    temp = temp/rel_movement_size;
+
+    for(int x = 0; x < std::min(5, rel_movement_size); x++)
+    {
+      //Predictive_Points.push_back(Predictive_Points[x] + relative_movement[rel_movement_size-(x+1)]);
+      Predictive_Points.push_back(Predictive_Points[x] + temp);
+    }
   }
   return Predictive_Points;
 }
@@ -90,13 +123,13 @@ cv::Point person_detector::GetTargetCenter(cv::Rect Target_Box)
   return target_point;
 }
 
-cv::Mat person_detector::MovementLine(std::vector<cv::Point> target_center, cv::Mat CurrentFrame)
+cv::Mat person_detector::MovementLine(std::vector<cv::Point> target_center, cv::Mat CurrentFrame, cv::Scalar LineColour)
 {
-  if (target_center.size() > 2)
+  if (target_center.size() >= 2)
   {
-    for(size_t x = 2; x < target_center.size(); x++)
+    for(size_t x = 1; x < target_center.size(); x++)
     {
-      cv::line(CurrentFrame, target_center[x], target_center[x-1], cv::Scalar(0, 255, 0), 2);
+      cv::line(CurrentFrame, target_center[x], target_center[x-1], LineColour, 2);
     }
   }
   return CurrentFrame;

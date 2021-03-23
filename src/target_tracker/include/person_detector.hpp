@@ -30,7 +30,7 @@ class person_detector
     cv::Mat imageOverlay(cv::Mat WorkingFrame, cv::Mat FilteredFrame, cv::Mat OriginalFrame);
     cv::Rect pixelcount(cv::Mat FilteredFrame, std::vector<cv::Rect> foundLocations);
     cv::Point GetTargetCenter(cv::Rect Target_Box);
-    cv::Mat MovementLine(std::vector<cv::Point> target_center, cv::Mat CurrentFrame);
+    cv::Mat MovementLine(std::vector<cv::Point> target_center, cv::Mat CurrentFrame, cv::Scalar LineColour);
     std::vector<cv::Point> CalculateRateOfMovement(std::vector<cv::Point> KnownPoints /*Timestamp for points*/);
     std::vector<cv::Point> MakeEstimation(std::vector<cv::Point> relative_movement, cv::Point LastPrecise);
 
