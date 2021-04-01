@@ -366,6 +366,12 @@ dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
 //The directory containing a CMake configuration file for eigen_conversions.
 eigen_conversions_DIR:PATH=/opt/ros/kinetic/share/eigen_conversions/cmake
 
+//Value Computed by CMake
+follow_waypoints_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/follow_waypoints
+
+//Value Computed by CMake
+follow_waypoints_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/follow_waypoints
+
 //The directory containing a CMake configuration file for forward_command_controller.
 forward_command_controller_DIR:PATH=/opt/ros/kinetic/share/forward_command_controller/cmake
 
@@ -486,15 +492,6 @@ message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/kinetic/share/nav_msgs/cmake
-
-//The directory containing a CMake configuration file for pal_detection_msgs.
-pal_detection_msgs_DIR:PATH=pal_detection_msgs_DIR-NOTFOUND
-
-//Value Computed by CMake
-pal_person_detector_opencv_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/pal_person_detector_opencv
-
-//Value Computed by CMake
-pal_person_detector_opencv_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/pal_person_detector_opencv
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
@@ -825,7 +822,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=20
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
