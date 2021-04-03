@@ -11,7 +11,7 @@
 		<!-- <arg name="scan_topic" default="/hokuyo_base/scan"/> -->
 		<param name="base_frame" value="summit_xl_a_base_footprint"/>
 		<param name="odom_frame" value="odom"/>
-		<!-- <param name ="use_sim_time" value="true"/> -->
+		<param name ="use_sim_time" value="true"/>
 		<!-- <remap from="clock" to="/simulationTime"/> -->
 
 		<!-- <param name="scan" value="/scan"/>
