@@ -1,17 +1,17 @@
 digraph G {
-"odom" -> "summit_xl_a_base_footprint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"summit_xl_a_base_footprint" -> "summit_xl_a_base_link"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"summit_xl_a_base_link" -> "bar_bl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"summit_xl_a_base_link" -> "bar_br_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"summit_xl_a_base_link" -> "bar_fl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"summit_xl_a_base_link" -> "bar_fr_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"summit_xl_a_base_link" -> "Hokuyo_URG_04LX_UG01"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"bar_bl_joint" -> "joint_back_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"bar_br_joint" -> "joint_back_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"bar_fl_joint" -> "joint_front_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
-"bar_fr_joint" -> "joint_front_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.538 Hz\nMost recent transform: 15.450 ( 1617464884.453 sec old)\nBuffer length: 0.650 sec\n"];
+"map" -> "summit_xl_a_odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 20.208 Hz\nMost recent transform: 1618145321.581 ( -0.003 sec old)\nBuffer length: 4.899 sec\n"];
+"summit_xl_a_odom" -> "summit_xl_a_base_footprint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_bl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_br_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_fl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_fr_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"summit_xl_a_base_footprint" -> "Hokuyo_URG_04LX_UG01"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"bar_bl_joint" -> "joint_back_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"bar_br_joint" -> "joint_back_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"bar_fl_joint" -> "joint_front_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
+"bar_fr_joint" -> "joint_front_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 22.000 Hz\nMost recent transform: 27.650 ( 1618145293.928 sec old)\nBuffer length: 0.500 sec\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1617464899.903"[ shape=plaintext ] ;
- }->"odom";
+"Recorded at time: 1618145321.578"[ shape=plaintext ] ;
+ }->"map";
 }

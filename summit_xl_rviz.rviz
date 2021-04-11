@@ -5,10 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Status1
         - /LaserScan1
         - /LaserScan1/Status1
-        - /Map1/Status1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 745
   - Class: rviz/Selection
@@ -29,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -77,9 +76,9 @@ Visualization Manager:
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.00999999978
-      Style: Flat Squares
+      Style: Points
       Topic: /hokuyo_base/scan
-      Unreliable: true
+      Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -108,38 +107,35 @@ Visualization Manager:
           Value: true
         map:
           Value: true
-        odom:
-          Value: true
         summit_xl_a_base_footprint:
           Value: true
         summit_xl_a_base_link:
+          Value: true
+        summit_xl_a_odom:
           Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
         map:
-          {}
-        odom:
-          summit_xl_a_base_footprint:
-            Hokuyo_URG_04LX_UG01:
-              {}
-            bar_bl_joint:
-              joint_back_left_wheel:
+          summit_xl_a_odom:
+            summit_xl_a_base_footprint:
+              Hokuyo_URG_04LX_UG01:
                 {}
-            bar_br_joint:
-              joint_back_right_wheel:
-                {}
-            bar_fl_joint:
-              joint_front_left_wheel:
-                {}
-            bar_fr_joint:
-              joint_front_right_wheel:
-                {}
-            summit_xl_a_base_link:
-              {}
+              bar_bl_joint:
+                joint_back_left_wheel:
+                  {}
+              bar_br_joint:
+                joint_back_right_wheel:
+                  {}
+              bar_fl_joint:
+                joint_front_left_wheel:
+                  {}
+              bar_fr_joint:
+                joint_front_right_wheel:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 0.699999988
@@ -156,7 +152,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: summit_xl_a_odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -177,7 +173,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 22.3086147
+      Distance: 53.8015289
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -187,15 +183,15 @@ Visualization Manager:
         X: 0
         Y: 0
         Z: 0
-      Focal Shape Fixed Size: true
+      Focal Shape Fixed Size: false
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.854795694
+      Pitch: 1.08539891
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.03859711
+      Yaw: 0.21174863
     Saved: ~
 Window Geometry:
   Displays:
