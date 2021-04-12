@@ -1,0 +1,8 @@
+prefix=/home/oscar/Documents/catkin_ws/install
+
+Name: confined_environment_search
+Description: Description of confined_environment_search
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

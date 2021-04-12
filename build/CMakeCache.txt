@@ -330,6 +330,12 @@ class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 //The directory containing a CMake configuration file for cmake_modules.
 cmake_modules_DIR:PATH=/opt/ros/kinetic/share/cmake_modules/cmake
 
+//Value Computed by CMake
+confined_environment_search_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/confined_environment_search
+
+//Value Computed by CMake
+confined_environment_search_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/confined_environment_search
+
 //The directory containing a CMake configuration file for control_msgs.
 control_msgs_DIR:PATH=/opt/ros/kinetic/share/control_msgs/cmake
 
@@ -617,6 +623,12 @@ summit_xl_localization_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/s
 summit_xl_localization_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/summit_xl_common/summit_xl_localization
 
 //Value Computed by CMake
+summit_xl_move_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/summit_xl_move
+
+//Value Computed by CMake
+summit_xl_move_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/summit_xl_move
+
+//Value Computed by CMake
 summit_xl_navigation_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/summit_xl_common/summit_xl_navigation
 
 //Value Computed by CMake
@@ -822,7 +834,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=23
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
