@@ -1,7 +1,7 @@
 <launch>
 
-	<include file="/home/oscar/Documents/catkin_ws/src/summit_gmapping/launch/mapping_launcher.launch"/>
-	<!-- <include file="/home/oscar/Documents/catkin_ws/src/target_tracker/launch/target_tracker.launch"/> -->
+	<!-- <include file="/home/oscar/Documents/catkin_ws/src/summit_gmapping/launch/mapping_launcher.launch"/> -->
+	<include file="/home/oscar/Documents/catkin_ws/src/target_tracker/launch/target_tracker.launch"/>
 	<!-- <include file="/home/oscar/Documents/catkin_ws/src/keyboard_movement/launch/keyboard_teleop.launch"/> -->
-	<include file="/home/oscar/Documents/catkin_ws/src/summit_xl_move/launch/summit_xl_move_base_odom_launcher.launch"/>
+	<!-- <include file="/home/oscar/Documents/catkin_ws/src/summit_xl_move/launch/summit_xl_move_base_odom_launcher.launch"/> -->
 </launch>

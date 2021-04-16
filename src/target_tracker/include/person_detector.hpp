@@ -49,8 +49,8 @@ class person_detector
     {
 
     }
-    cv::Mat person_tracker(cv::Mat Frame);
-
+    //cv::Mat person_tracker(cv::Mat Frame);
+    cv::Point person_tracker(cv::Mat Frame);
   protected:
     ros::Time _imgTimeStamp;
     //boost::scoped_ptr<cv::HOGDescriptor> _hogCPU;

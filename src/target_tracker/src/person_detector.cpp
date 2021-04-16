@@ -1,6 +1,9 @@
 #include "person_detector.hpp"
 
-cv::Mat person_detector::person_tracker(cv::Mat OriginalFrame)
+
+
+//cv::Mat person_detector::person_tracker(cv::Mat OriginalFrame)
+cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
 {
   static std::vector<cv::Point> target_center;
 
@@ -70,7 +73,7 @@ cv::Mat person_detector::person_tracker(cv::Mat OriginalFrame)
     Frame = MovementLine(target_center, Frame, cv::Scalar(255, 0, 0));
     Frame = MovementLine(predictive_points, Frame, cv::Scalar(0, 255, 0));
 
-  return Frame;
+  return temp;
 }
 
 std::vector<cv::Point> person_detector::CalculateRateOfMovement(std::vector<cv::Point> KnownPoints /*Timestamp for points*/)

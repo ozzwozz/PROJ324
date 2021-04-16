@@ -5,6 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /Status1
+        - /LaserScan1/Status1
       Splitter Ratio: 0.5
     Tree Height: 562
   - Class: rviz/Selection
@@ -89,8 +91,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        Hokuyo_URG_04LX_UG01:
-          Value: true
         bar_bl_joint:
           Value: true
         bar_br_joint:
@@ -106,6 +106,8 @@ Visualization Manager:
         joint_front_left_wheel:
           Value: true
         joint_front_right_wheel:
+          Value: true
+        laser:
           Value: true
         map:
           Value: true
@@ -123,8 +125,6 @@ Visualization Manager:
           {}
         summit_xl_a_odom:
           summit_xl_a_base_footprint:
-            Hokuyo_URG_04LX_UG01:
-              {}
             bar_bl_joint:
               joint_back_left_wheel:
                 {}
@@ -137,6 +137,8 @@ Visualization Manager:
             bar_fr_joint:
               joint_front_right_wheel:
                 {}
+            laser:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 0.699999988
@@ -246,25 +248,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 11.4968748
+      Distance: 19.1738586
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.598099709
-        Y: -0.199099541
-        Z: 9.53674316e-07
-      Focal Shape Fixed Size: true
+        X: 0.2084409
+        Y: -0.234373927
+        Z: 0
+      Focal Shape Fixed Size: false
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.614796996
-      Target Frame: <Fixed Frame>
+      Pitch: 0.679797292
+      Target Frame: map
       Value: XYOrbit (rviz)
-      Yaw: 5.81359434
+      Yaw: 0.0653964132
     Saved: ~
 Window Geometry:
   Displays:

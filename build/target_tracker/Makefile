@@ -333,6 +333,33 @@ src/face_and_eye.cpp.s:
 	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.s
 .PHONY : src/face_and_eye.cpp.s
 
+src/follow_target_step.o: src/follow_target_step.cpp.o
+
+.PHONY : src/follow_target_step.o
+
+# target to build an object file
+src/follow_target_step.cpp.o:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/follow_target_step.cpp.o
+.PHONY : src/follow_target_step.cpp.o
+
+src/follow_target_step.i: src/follow_target_step.cpp.i
+
+.PHONY : src/follow_target_step.i
+
+# target to preprocess a source file
+src/follow_target_step.cpp.i:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/follow_target_step.cpp.i
+.PHONY : src/follow_target_step.cpp.i
+
+src/follow_target_step.s: src/follow_target_step.cpp.s
+
+.PHONY : src/follow_target_step.s
+
+# target to generate assembly for a file
+src/follow_target_step.cpp.s:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f target_tracker/CMakeFiles/target_tracker_node.dir/build.make target_tracker/CMakeFiles/target_tracker_node.dir/src/follow_target_step.cpp.s
+.PHONY : src/follow_target_step.cpp.s
+
 src/load_image.o: src/load_image.cpp.o
 
 .PHONY : src/load_image.o
@@ -411,6 +438,9 @@ help:
 	@echo "... src/face_and_eye.o"
 	@echo "... src/face_and_eye.i"
 	@echo "... src/face_and_eye.s"
+	@echo "... src/follow_target_step.o"
+	@echo "... src/follow_target_step.i"
+	@echo "... src/follow_target_step.s"
 	@echo "... src/load_image.o"
 	@echo "... src/load_image.i"
 	@echo "... src/load_image.s"
