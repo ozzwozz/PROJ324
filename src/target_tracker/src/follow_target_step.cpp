@@ -11,10 +11,10 @@ geometry_msgs::Twist LinefollowerPID::assignTwist(int cx)
 {
   static geometry_msgs::Twist twist_object;
 
-  int error_x = cx - x_centre;
+  int error_x = x_centre - cx;
   //twist_object = Twist();
-  twist_object.linear.x = 0.5;
-  twist_object.angular.z = -error_x / 100;
+  twist_object.linear.x = -error_x / 100;
+  twist_object.angular.z = 0.5;
   return twist_object;
 }
 
@@ -25,4 +25,9 @@ int LinefollowerPID::speedChange()
 
 
   return speedModifier;
+}
+
+void LinefollowerPID::ClassClean()
+{
+
 }

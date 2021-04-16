@@ -45,6 +45,8 @@ cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
 
     static std::vector<cv::Point> predictive_points;
     static int predictionTracker;
+    cv::Point target_follow_point;
+
     //get centre of target person
     cv::Point temp = GetTargetCenter(Target_Box);
     if (temp.x != 0 && temp.y != 0)
@@ -56,6 +58,9 @@ cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
       predictive_points.clear();
       predictive_points = MakeEstimation(RateofMovement, temp);
       predictionTracker = 0;
+
+      target_follow_point = temp;
+
     }
     else
     {
@@ -68,12 +73,13 @@ cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
           predictionTracker++;
         }
       }
+      target_follow_point = predictive_points[predictionTracker];
     }
 
     Frame = MovementLine(target_center, Frame, cv::Scalar(255, 0, 0));
     Frame = MovementLine(predictive_points, Frame, cv::Scalar(0, 255, 0));
 
-  return temp;
+  return target_follow_point;
 }
 
 std::vector<cv::Point> person_detector::CalculateRateOfMovement(std::vector<cv::Point> KnownPoints /*Timestamp for points*/)

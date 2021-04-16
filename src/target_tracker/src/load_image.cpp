@@ -19,6 +19,10 @@ class ImageConverter
   image_transport::Subscriber image_sub_;
   image_transport::Publisher image_pub_;
   ros::Publisher cmd_vel_pub_;
+
+  private:
+    geometry_msgs::Twist twist_to_publish;
+
 public:
   ImageConverter()
     : it_(nh_)
@@ -62,9 +66,16 @@ public:
 
     cv::Point point_msg = p_detector->person_tracker(Frame);
 
-    cv::Point point_msg;
-
-    geometry_msgs::Twist twist_to_publish = followerPID_object.PID(point_msg);
+    //cv::Point point_msg;
+    if (point_msg.x > 0 && point_msg.y > 0)
+    {
+      twist_to_publish = followerPID_object.PID(point_msg);
+    }
+    else
+    {
+      twist_to_publish.linear.x = 0;
+      twist_to_publish.angular.z = 0;
+    }
 
     // Update GUI Window
     cv::imshow(OPENCV_WINDOW, Frame);

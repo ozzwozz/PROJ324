@@ -15,7 +15,7 @@ class LinefollowerPID
     int x_centre;
     int y_centre;
   protected:
-
+    void ClassClean();
 
   public:
     LinefollowerPID(int xSize, int ySize)
