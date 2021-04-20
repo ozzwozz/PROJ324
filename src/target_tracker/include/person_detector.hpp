@@ -19,6 +19,7 @@
 
 // Std C++ headers
 #include <vector>
+#include <math.h>
 
 class person_detector
 {
@@ -34,15 +35,18 @@ class person_detector
     std::vector<cv::Point> CalculateRateOfMovement(std::vector<cv::Point> KnownPoints /*Timestamp for points*/);
     std::vector<cv::Point> MakeEstimation(std::vector<cv::Point> relative_movement, cv::Point LastPrecise);
 
+    int xSize = 1080;
+    int ySize = 720;
+
+    int x_centre = xSize / 2;
+    int y_centre = ySize / 2;
 
   public:
     //constructor
-    person_detector()
+    person_detector(int xSize, int ySize)
     {
-      // // cv::HOGDescriptor hog;
-      // // hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
-      // _hogCPU.reset( new cv::HOGDescriptor );
-      // _hogCPU->setSVMDetector( cv::HOGDescriptor::getDefaultPeopleDetector() );
+      x_centre = xSize / 2;
+      y_centre = ySize / 2;
     }
     //destructor
     ~person_detector()
@@ -51,6 +55,7 @@ class person_detector
     }
     //cv::Mat person_tracker(cv::Mat Frame);
     cv::Point person_tracker(cv::Mat Frame);
+    unsigned int angleFromCentre(cv::Point point);
   protected:
     ros::Time _imgTimeStamp;
     //boost::scoped_ptr<cv::HOGDescriptor> _hogCPU;

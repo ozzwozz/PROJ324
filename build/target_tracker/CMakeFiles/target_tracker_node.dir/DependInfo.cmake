@@ -4,10 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/oscar/Documents/catkin_ws/src/target_tracker/src/PoseEstimator.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/PoseEstimator.cpp.o"
   "/home/oscar/Documents/catkin_ws/src/target_tracker/src/face_and_eye.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.o"
   "/home/oscar/Documents/catkin_ws/src/target_tracker/src/follow_target_step.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/follow_target_step.cpp.o"
   "/home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/load_image.cpp.o"
   "/home/oscar/Documents/catkin_ws/src/target_tracker/src/person_detector.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/person_detector.cpp.o"
+  "/home/oscar/Documents/catkin_ws/src/target_tracker/src/target_marker_node.cpp" "/home/oscar/Documents/catkin_ws/build/target_tracker/CMakeFiles/target_tracker_node.dir/src/target_marker_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

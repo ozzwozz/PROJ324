@@ -72,14 +72,15 @@ cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
           circle(Frame, cv::Point(predictive_points[predictionTracker]), 5, cv::Scalar(255, 0, 0), 3);//BGR
           predictionTracker++;
         }
+        //target_follow_point = predictive_points[predictionTracker];
       }
-      target_follow_point = predictive_points[predictionTracker];
+
     }
 
     Frame = MovementLine(target_center, Frame, cv::Scalar(255, 0, 0));
     Frame = MovementLine(predictive_points, Frame, cv::Scalar(0, 255, 0));
 
-  return target_follow_point;
+  return temp;
 }
 
 std::vector<cv::Point> person_detector::CalculateRateOfMovement(std::vector<cv::Point> KnownPoints /*Timestamp for points*/)
@@ -199,4 +200,23 @@ cv::Mat person_detector::shirtColour(cv::Mat Frame)
   //cv::inRange(Frame, cv::Scalar(10, 5, 5), cv::Scalar(190, 160, 160), FilteredFrame);
   //use to find center of red mass
   return FilteredFrame;
+}
+
+unsigned int person_detector::angleFromCentre(cv::Point point)
+{
+  int Opposite;
+  int Adj;
+  // if target is on left of center
+  if (x_centre > point.x)
+  {
+    Opposite = x_centre - point.x;
+    Adj = ySize - point.y;
+  }
+  else if (x_centre < point.x)
+  {
+    Opposite = point.x - x_centre;
+    Adj = ySize - point.y;
+  }
+  int Angle = tan(Opposite / Adj);
+  return Angle;
 }

@@ -12,3 +12,8 @@ void SearchingMappedArea::ConvertMapToGraph()
 		}
 	}
 }
+
+int main()
+{
+
+}

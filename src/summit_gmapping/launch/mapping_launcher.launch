@@ -4,7 +4,7 @@
 	<!-- <arg name="scan_topic" default="/hokuyo_base/scan"/>
 	<arg name="base_frame" default="/summit_xl_a_base_footprint"/>
 	<arg name="odom_frame" default="/summit_xl_a_odom"/> -->
-	<param name ="use_sim_time" value="true"/>
+	<!-- <param name ="use_sim_time" value="true"/> -->
 
 	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
 		<remap from="scan" to="/hokuyo_base/scan"/>

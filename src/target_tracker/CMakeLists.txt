@@ -15,6 +15,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   geometry_msgs
+  visualization_msgs
+  image_geometry
 )
 
 find_package(OpenCV REQUIRED)
@@ -47,7 +49,7 @@ include
 )
 
 ## main script
-add_executable(target_tracker_node src/load_image.cpp include/face_and_eye.hpp src/face_and_eye.cpp include/person_detector.hpp src/person_detector.cpp src/follow_target_step.cpp include/follow_target_step.hpp)
+add_executable(target_tracker_node src/load_image.cpp include/face_and_eye.hpp src/face_and_eye.cpp include/person_detector.hpp src/person_detector.cpp src/follow_target_step.cpp include/follow_target_step.hpp src/target_marker_node.cpp include/target_marker_node.hpp src/PoseEstimator.cpp include/PoseEstimator.hpp)
 add_dependencies(target_tracker_node ${target_tracker_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against

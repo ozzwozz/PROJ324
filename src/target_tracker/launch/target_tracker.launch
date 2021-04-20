@@ -1,3 +1,10 @@
 <launch>
-<node name="ImageNode" pkg="target_tracker" type="target_tracker_node" output="screen"/>
+  <arg name="scan" default="/hokuyo_base/scan"/>
+
+  <!-- <node name="nodelet_manager" pkg="nodelet" type="nodelet" args="manager"/>
+  <node name="nodelet1" pkg="nodelet" type="nodelet" args="load depth_image_proc/convert_metric nodelet_manager">
+      <remap from="image_raw" to="/image_converter/output_video/compressedDepth"/>
+  </node> -->
+
+  <node name="ImageNode" pkg="target_tracker" type="target_tracker_node" output="screen" respawn="true"/>
 </launch>

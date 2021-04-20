@@ -1,16 +1,17 @@
 digraph G {
-"summit_xl_a_odom" -> "summit_xl_a_base_footprint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_bl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_br_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_fl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_fr_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"summit_xl_a_base_footprint" -> "Hokuyo_URG_04LX_UG01"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"bar_bl_joint" -> "joint_back_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"bar_br_joint" -> "joint_back_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"bar_fl_joint" -> "joint_front_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
-"bar_fr_joint" -> "joint_front_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.818 Hz\nMost recent transform: 127.000 ( 1618241321.722 sec old)\nBuffer length: 0.550 sec\n"];
+"summit_xl_a_odom" -> "summit_xl_a_base_footprint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"map" -> "summit_xl_a_odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 33.333 Hz\nMost recent transform: 1.800 ( -0.000 sec old)\nBuffer length: 0.150 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_bl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_br_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_fl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_fr_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"summit_xl_a_base_footprint" -> "laser"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"bar_bl_joint" -> "joint_back_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"bar_br_joint" -> "joint_back_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"bar_fl_joint" -> "joint_front_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
+"bar_fr_joint" -> "joint_front_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 24.000 Hz\nMost recent transform: 1.800 ( 0.000 sec old)\nBuffer length: 0.250 sec\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1618241448.722"[ shape=plaintext ] ;
- }->"summit_xl_a_odom";
+"Recorded at time: 1.800"[ shape=plaintext ] ;
+ }->"map";
 }
