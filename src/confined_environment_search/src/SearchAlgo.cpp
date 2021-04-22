@@ -13,7 +13,21 @@ void SearchingMappedArea::ConvertMapToGraph()
 	}
 }
 
-int main()
+
+void SearchingMappedArea::SearchCallback(const nav_msgs::Odometry& msg)
 {
 
+
+
+}
+
+int main(int argc, char** argv)
+{
+  ros::init(argc, argv, "area_search");
+  SearchingMappedArea SearchMappedArea;
+  while(ros::ok())
+  {
+    ros::spinOnce();
+  }
+  return 0;
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>confined_environment_search</name>
+  <name>environment_search</name>
   <version>0.0.0</version>
-  <description>The confined_environment_search package</description>
+  <description>The environment_search package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

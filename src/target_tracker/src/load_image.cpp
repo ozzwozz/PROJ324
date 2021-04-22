@@ -67,14 +67,22 @@ public:
 
     cv::Point point_msg = p_detector->person_tracker(Frame);
 
-    unsigned int target_angle = p_detector->angleFromCentre(point_msg);
+    //unsigned int target_angle = p_detector->angleFromCentre(point_msg);
     // //cv::Point point_msg;
     if (point_msg.x > 0 && point_msg.y > 0)
     {
+      unsigned int target_angle = p_detector->angleFromCentre(point_msg);
+
        twist_to_publish = followerPID_object.PID(point_msg);
        //target_marker_node.target_marker_callback(point_msg);
 
-       PoseEstimator.convert2Dto3D(point_msg, cv_ptr->image);
+       //PoseEstimator.convert2Dto3D(point_msg, cv_ptr->image);
+    }
+    else
+    {
+      twist_to_publish.linear.x = 0;
+      twist_to_publish.linear.y = 0;
+      twist_to_publish.linear.z = 0;
     }
 
     // Update GUI Window
