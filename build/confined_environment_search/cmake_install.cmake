@@ -43,17 +43,17 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/oscar/Documents/catkin_ws/build/confined_environment_search/catkin_generated/installspace/confined_environment_search.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/oscar/Documents/catkin_ws/build/confined_environment_search/catkin_generated/installspace/environment_search.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/confined_environment_search/cmake" TYPE FILE FILES
-    "/home/oscar/Documents/catkin_ws/build/confined_environment_search/catkin_generated/installspace/confined_environment_searchConfig.cmake"
-    "/home/oscar/Documents/catkin_ws/build/confined_environment_search/catkin_generated/installspace/confined_environment_searchConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/environment_search/cmake" TYPE FILE FILES
+    "/home/oscar/Documents/catkin_ws/build/confined_environment_search/catkin_generated/installspace/environment_searchConfig.cmake"
+    "/home/oscar/Documents/catkin_ws/build/confined_environment_search/catkin_generated/installspace/environment_searchConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/confined_environment_search" TYPE FILE FILES "/home/oscar/Documents/catkin_ws/src/confined_environment_search/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/environment_search" TYPE FILE FILES "/home/oscar/Documents/catkin_ws/src/confined_environment_search/package.xml")
 endif()
 

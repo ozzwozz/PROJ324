@@ -75,6 +75,18 @@ CMAKE_BINARY_DIR = /home/oscar/Documents/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -99,18 +111,6 @@ install/fast: preinstall/fast
 	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,16 +121,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : rebuild_cache/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -143,16 +143,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : edit_cache/fast
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -187,229 +187,346 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: confined_environment_search/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+geometry_msgs_generate_messages_py: confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_py
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+geometry_msgs_generate_messages_py/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: confined_environment_search/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+geometry_msgs_generate_messages_nodejs: confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+confined_environment_search/CMakeFiles/environment_search_node.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/environment_search_node.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/environment_search_node.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: confined_environment_search/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+environment_search_node: confined_environment_search/CMakeFiles/environment_search_node.dir/rule
 
-.PHONY : std_msgs_generate_messages_cpp
+.PHONY : environment_search_node
 
 # fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
+environment_search_node/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/environment_search_node.dir/build.make confined_environment_search/CMakeFiles/environment_search_node.dir/build
+.PHONY : environment_search_node/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: confined_environment_search/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+geometry_msgs_generate_messages_lisp: confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_lisp
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+confined_environment_search/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+actionlib_generate_messages_lisp: confined_environment_search/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+actionlib_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: confined_environment_search/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+move_base_msgs_generate_messages_eus: confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : move_base_msgs_generate_messages_eus
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+move_base_msgs_generate_messages_eus/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build
+.PHONY : move_base_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: confined_environment_search/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+actionlib_msgs_generate_messages_nodejs: confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+confined_environment_search/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: confined_environment_search/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+actionlib_generate_messages_cpp: confined_environment_search/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : actionlib_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/roscpp_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+actionlib_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+confined_environment_search/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: confined_environment_search/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+actionlib_generate_messages_eus: confined_environment_search/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_eus
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+actionlib_generate_messages_eus/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+move_base_msgs_generate_messages_lisp: confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : move_base_msgs_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+move_base_msgs_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
+.PHONY : move_base_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/roscpp_generate_messages_py.dir/rule
+confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: confined_environment_search/CMakeFiles/roscpp_generate_messages_py.dir/rule
+move_base_msgs_generate_messages_cpp: confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : move_base_msgs_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/roscpp_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+move_base_msgs_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
+.PHONY : move_base_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+actionlib_msgs_generate_messages_lisp: confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+.PHONY : actionlib_msgs_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+confined_environment_search/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+actionlib_generate_messages_nodejs: confined_environment_search/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : actionlib_generate_messages_nodejs
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+actionlib_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: confined_environment_search/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+geometry_msgs_generate_messages_cpp: confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/std_msgs_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+actionlib_msgs_generate_messages_eus: confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_eus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+move_base_msgs_generate_messages_py: confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
+
+.PHONY : move_base_msgs_generate_messages_py
+
+# fast build rule for target.
+move_base_msgs_generate_messages_py/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
+.PHONY : move_base_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+move_base_msgs_generate_messages_nodejs: confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : move_base_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+move_base_msgs_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build.make confined_environment_search/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build
+.PHONY : move_base_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make confined_environment_search/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+confined_environment_search/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 confined_environment_search/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : confined_environment_search/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: confined_environment_search/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/actionlib_generate_messages_py.dir/build.make confined_environment_search/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+src/SearchAlgo.o: src/SearchAlgo.cpp.o
+
+.PHONY : src/SearchAlgo.o
+
+# target to build an object file
+src/SearchAlgo.cpp.o:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/environment_search_node.dir/build.make confined_environment_search/CMakeFiles/environment_search_node.dir/src/SearchAlgo.cpp.o
+.PHONY : src/SearchAlgo.cpp.o
+
+src/SearchAlgo.i: src/SearchAlgo.cpp.i
+
+.PHONY : src/SearchAlgo.i
+
+# target to preprocess a source file
+src/SearchAlgo.cpp.i:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/environment_search_node.dir/build.make confined_environment_search/CMakeFiles/environment_search_node.dir/src/SearchAlgo.cpp.i
+.PHONY : src/SearchAlgo.cpp.i
+
+src/SearchAlgo.s: src/SearchAlgo.cpp.s
+
+.PHONY : src/SearchAlgo.s
+
+# target to generate assembly for a file
+src/SearchAlgo.cpp.s:
+	cd /home/oscar/Documents/catkin_ws/build && $(MAKE) $(MAKESILENT) -f confined_environment_search/CMakeFiles/environment_search_node.dir/build.make confined_environment_search/CMakeFiles/environment_search_node.dir/src/SearchAlgo.cpp.s
+.PHONY : src/SearchAlgo.cpp.s
 
 # Help Target
 help:
@@ -424,21 +541,30 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... actionlib_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... move_base_msgs_generate_messages_cpp"
+	@echo "... move_base_msgs_generate_messages_eus"
+	@echo "... move_base_msgs_generate_messages_lisp"
+	@echo "... move_base_msgs_generate_messages_nodejs"
+	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... environment_search_node"
+	@echo "... src/SearchAlgo.o"
+	@echo "... src/SearchAlgo.i"
+	@echo "... src/SearchAlgo.s"
 .PHONY : help
 
 

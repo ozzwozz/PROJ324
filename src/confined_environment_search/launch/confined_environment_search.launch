@@ -1,3 +1,0 @@
-<launch>
-  <node name="environment_search" type="environment_search_node" pkg="confined_environment_search"/>
-</launch>

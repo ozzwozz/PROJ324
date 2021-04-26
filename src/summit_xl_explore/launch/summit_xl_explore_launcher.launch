@@ -1,0 +1,31 @@
+<launch>
+  <param name ="use_sim_time" value="false"/>
+
+  <node name="explore" pkg="explore_lite" type="explore" output="screen" respawn="false">
+    <!-- <param name="robot_base_frame" value="base_link"/> -->
+    <param name="costmap_topic" value="/map"/>
+    <param name="costmap_updates_topic" value="/map_updates"/>
+    <param name="visualize" value="True"/>
+    <param name="planner_frequency" value="0.33"/>
+    <param name="progress_timeout" value="30.0"/>
+    <param name="potential_scale" value="3.0"/>
+    <param name="orientation_scale" value="0.0"/>
+    <param name="gain_scale" value="1.0"/>
+    <param name="transform_tolerance" value="0.3"/>
+    <param name="min_frontier_size" value="0.75"/>
+  </node>
+</launch>
+
+<!-- * /explore/costmap_topic: map
+* /explore/costmap_updates_topic: map_updates
+* /explore/gain_scale: 1.0
+* /explore/min_frontier_size: 0.75
+* /explore/orientation_scale: 0.0
+* /explore/planner_frequency: 0.33
+* /explore/potential_scale: 3.0
+* /explore/progress_timeout: 30.0
+* /explore/robot_base_frame: base_link
+* /explore/transform_tolerance: 0.3
+* /explore/visualize: True
+* /rosdistro: kinetic
+* /rosversion: 1.12.17 -->

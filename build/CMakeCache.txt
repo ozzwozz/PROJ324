@@ -373,6 +373,12 @@ dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
 eigen_conversions_DIR:PATH=/opt/ros/kinetic/share/eigen_conversions/cmake
 
 //Value Computed by CMake
+environment_search_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/confined_environment_search
+
+//Value Computed by CMake
+environment_search_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/confined_environment_search
+
+//Value Computed by CMake
 follow_waypoints_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/follow_waypoints
 
 //Value Computed by CMake
@@ -499,6 +505,9 @@ message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for move_base_msgs.
+move_base_msgs_DIR:PATH=/opt/ros/kinetic/share/move_base_msgs/cmake
+
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/kinetic/share/nav_msgs/cmake
 
@@ -594,6 +603,12 @@ summit_xl_description_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/su
 
 //Value Computed by CMake
 summit_xl_description_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/summit_xl_common/summit_xl_description
+
+//Value Computed by CMake
+summit_xl_explore_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/summit_xl_explore
+
+//Value Computed by CMake
+summit_xl_explore_SOURCE_DIR:STATIC=/home/oscar/Documents/catkin_ws/src/summit_xl_explore
 
 //Value Computed by CMake
 summit_xl_gazebo_BINARY_DIR:STATIC=/home/oscar/Documents/catkin_ws/build/summit_xl_sim/summit_xl_gazebo

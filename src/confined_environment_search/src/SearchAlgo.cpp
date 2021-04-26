@@ -1,3 +1,5 @@
+#include <SearchAlgo.hpp>
+
 void SearchingMappedArea::ConvertMapToGraph()
 {
 	int mapwidth;
@@ -8,7 +10,7 @@ void SearchingMappedArea::ConvertMapToGraph()
 		for (int y =0; y < mapheight; y++)
 		{
 			if (GraphMatrix[x][y] == '0')
-			GraphMatrix[x][y] = ;
+			GraphMatrix[x][y] = 0;
 		}
 	}
 }
@@ -24,7 +26,7 @@ void SearchingMappedArea::SearchCallback(const nav_msgs::Odometry& msg)
 
 void SearchingMappedArea::CalculateNextPose()
 {
-    
+
 }
 
 void SearchingMappedArea::GoalStateCheck()
@@ -63,11 +65,10 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "area_search");
     SearchingMappedArea SearchMappedArea;
-    
+
     while(ros::ok())
     {
         ros::spinOnce();
     }
     return 0;
 }
-

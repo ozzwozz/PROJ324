@@ -1,18 +1,18 @@
 digraph G {
-"map" -> "summit_xl_a_odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 20.204 Hz\nMost recent transform: 1619026954.265 ( -0.046 sec old)\nBuffer length: 4.949 sec\n"];
-"summit_xl_a_odom" -> "summit_xl_a_base_footprint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_bl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_br_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_fl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"summit_xl_a_base_footprint" -> "bar_fr_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"summit_xl_a_base_footprint" -> "laser"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"summit_xl_a_base_footprint" -> "camera_sensor"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"bar_bl_joint" -> "joint_back_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"bar_br_joint" -> "joint_back_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"bar_fl_joint" -> "joint_front_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
-"bar_fr_joint" -> "joint_front_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.176 Hz\nMost recent transform: 3.400 ( 1619026950.819 sec old)\nBuffer length: 0.850 sec\n"];
+"map" -> "summit_xl_a_odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 40.000 Hz\nMost recent transform: 300.150 ( -0.050 sec old)\nBuffer length: 0.650 sec\n"];
+"summit_xl_a_odom" -> "summit_xl_a_base_footprint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_bl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_br_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_fl_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"summit_xl_a_base_footprint" -> "bar_fr_joint"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"summit_xl_a_base_footprint" -> "laser"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"summit_xl_a_base_footprint" -> "camera_sensor"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"bar_bl_joint" -> "joint_back_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"bar_br_joint" -> "joint_back_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"bar_fl_joint" -> "joint_front_left_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
+"bar_fr_joint" -> "joint_front_right_wheel"[label="Broadcaster: /sim_ros_interface\nAverage rate: 21.666 Hz\nMost recent transform: 300.100 ( 0.000 sec old)\nBuffer length: 0.600 sec\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1619026954.219"[ shape=plaintext ] ;
+"Recorded at time: 300.100"[ shape=plaintext ] ;
  }->"map";
 }
