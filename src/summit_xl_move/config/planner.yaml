@@ -35,7 +35,7 @@ TrajectoryPlannerROS:
  # Trajectory scoring parameters
  # Wether the gdist_scale and pdist_scale are assumed in meters
  meter_scoring: true
- occdist_scale: 0.1 # weighting for obstacle avoidance
+ occdist_scale: 0.01 # weighting for obstacle avoidance
  pdist_scale: 0.75 # weighting for closeness of staying to the path
  gdist_scale: 1.0 # weighting for goal completion and speed
 

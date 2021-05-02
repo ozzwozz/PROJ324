@@ -21,4 +21,4 @@ obstacles_laser:
  hokuyo_laser: {sensor_frame: Hokuyo_URG_04LX_UG01, data_type: LaserScan, clearing: true, marking: true, topic: /hokuyo_base/scan, inf_is_valid: true}
 
 inflation:
- inflation_radius: 1.0
+ inflation_radius: 0.0

@@ -1,13 +1,13 @@
-base_frame: base_link
-odom_frame: summit_xl_a_odom
+# base_frame: base_link
+# odom_frame: summit_xl_a_odom
 map_update_interval: 0.5
 maxUrange: 6.0
 maxRange: 8.0
 
 minimumScore: 50
 
-linearUpdate: 0.0
-angularUpdate: 0.0
+linearUpdate: 2.0
+angularUpdate: 2.0
 temporalUpdate: -1.0
 resampleThreshold: 0.5
 particles: 80
