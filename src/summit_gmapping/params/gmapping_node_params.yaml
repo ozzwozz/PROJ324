@@ -1,10 +1,11 @@
 # base_frame: base_link
 # odom_frame: summit_xl_a_odom
 map_update_interval: 0.5
-maxUrange: 6.0
-maxRange: 8.0
+maxUrange: 10.0
+maxRange: 15.0
 
-minimumScore: 100
+minimumScore: 400
+occ_thresh: 0.25
 
 linearUpdate: 0.0
 angularUpdate: 0.0
