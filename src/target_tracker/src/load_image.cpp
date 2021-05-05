@@ -74,6 +74,7 @@ public:
       unsigned int target_angle = p_detector->angleFromCentre(point_msg);
 
        twist_to_publish = followerPID_object.PID(point_msg);
+       ROS_INFO("Target Detected , cancelling exploration and move_base");
        //target_marker_node.target_marker_callback(point_msg);
 
        //PoseEstimator.convert2Dto3D(point_msg, cv_ptr->image);
@@ -85,11 +86,11 @@ public:
       twist_to_publish.linear.z = 0;
     }
 
+    cv::resize(Frame, Frame, Size(540,360));
     // Update GUI Window
     cv::imshow(OPENCV_WINDOW, Frame);
     waitKey(10);
 
-    //image_pub_.publish(msg);
     // publish target point
     cmd_vel_pub_.publish(twist_to_publish);
   }

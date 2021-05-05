@@ -4,6 +4,8 @@ geometry_msgs::Twist LinefollowerPID::PID(cv::Point msg)
 {
   speedChange();
   geometry_msgs::Twist twist_to_publish = assignTwist(msg.x);
+  actionlib_msgs::GoalID GoalCancel = GetCancelMsg();
+  goalCancel_Pub_.publish(GoalCancel);
   return twist_to_publish;
 }
 
@@ -16,6 +18,13 @@ geometry_msgs::Twist LinefollowerPID::assignTwist(int cx)
   twist_object.linear.x = -error_x / 100;
   twist_object.angular.z = 0.5;
   return twist_object;
+}
+
+actionlib_msgs::GoalID LinefollowerPID::GetCancelMsg()
+{
+  GoalCancel.stamp = ros::Time::now();
+  GoalCancel.id = "";
+  return GoalCancel;
 }
 
 int LinefollowerPID::speedChange()

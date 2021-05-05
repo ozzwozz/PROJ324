@@ -5,6 +5,7 @@
   <node name="nodelet1" pkg="nodelet" type="nodelet" args="load depth_image_proc/convert_metric nodelet_manager">
       <remap from="image_raw" to="/image_converter/output_video/compressedDepth"/>
   </node> -->
+  <param name ="use_sim_time" value="true"/>
 
   <node name="ImageNode" pkg="target_tracker" type="target_tracker_node" output="screen" respawn="true"/>
 </launch>

@@ -441,6 +441,7 @@ target_tracker/CMakeFiles/target_tracker_node.dir/src/face_and_eye.cpp.o
 target_tracker/CMakeFiles/target_tracker_node.dir/src/follow_target_step.cpp.o
  /home/oscar/Documents/catkin_ws/src/target_tracker/include/follow_target_step.hpp
  /home/oscar/Documents/catkin_ws/src/target_tracker/src/follow_target_step.cpp
+ /opt/ros/kinetic/include/actionlib_msgs/GoalID.h
  /opt/ros/kinetic/include/geometry_msgs/Twist.h
  /opt/ros/kinetic/include/geometry_msgs/Vector3.h
  /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
@@ -640,6 +641,7 @@ target_tracker/CMakeFiles/target_tracker_node.dir/src/load_image.cpp.o
  /home/oscar/Documents/catkin_ws/src/target_tracker/include/person_detector.hpp
  /home/oscar/Documents/catkin_ws/src/target_tracker/include/target_marker_node.hpp
  /home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp
+ /opt/ros/kinetic/include/actionlib_msgs/GoalID.h
  /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
  /opt/ros/kinetic/include/geometry_msgs/Point.h
  /opt/ros/kinetic/include/geometry_msgs/Pose.h

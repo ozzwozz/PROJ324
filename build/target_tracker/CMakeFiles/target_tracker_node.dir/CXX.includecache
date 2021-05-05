@@ -49,6 +49,8 @@ opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
 -
+actionlib_msgs/GoalID.h
+-
 
 /home/oscar/Documents/catkin_ws/src/target_tracker/include/person_detector.hpp
 opencv2/imgproc/imgproc.hpp
@@ -94,18 +96,6 @@ opencv2/imgproc/imgproc.hpp
 sensor_msgs/LaserScan.h
 -
 
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/PoseEstimator.cpp
-PoseEstimator.hpp
--
-
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/face_and_eye.cpp
-face_and_eye.hpp
--
-
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/follow_target_step.cpp
-follow_target_step.hpp
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/follow_target_step.hpp
-
 /home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp
 ros/ros.h
 -
@@ -130,12 +120,20 @@ target_marker_node.hpp
 PoseEstimator.hpp
 /home/oscar/Documents/catkin_ws/src/target_tracker/src/PoseEstimator.hpp
 
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/person_detector.cpp
-person_detector.hpp
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/person_detector.hpp
-
-/home/oscar/Documents/catkin_ws/src/target_tracker/src/target_marker_node.cpp
-target_marker_node.hpp
+/opt/ros/kinetic/include/actionlib_msgs/GoalID.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
