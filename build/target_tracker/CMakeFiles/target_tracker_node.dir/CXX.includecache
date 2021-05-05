@@ -96,6 +96,10 @@ opencv2/imgproc/imgproc.hpp
 sensor_msgs/LaserScan.h
 -
 
+/home/oscar/Documents/catkin_ws/src/target_tracker/src/follow_target_step.cpp
+follow_target_step.hpp
+/home/oscar/Documents/catkin_ws/src/target_tracker/src/follow_target_step.hpp
+
 /home/oscar/Documents/catkin_ws/src/target_tracker/src/load_image.cpp
 ros/ros.h
 -

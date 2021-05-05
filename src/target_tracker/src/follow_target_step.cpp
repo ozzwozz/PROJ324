@@ -16,7 +16,7 @@ geometry_msgs::Twist LinefollowerPID::assignTwist(int cx)
   int error_x = x_centre - cx;
   //twist_object = Twist();
   twist_object.linear.x = -error_x / 100;
-  twist_object.angular.z = 0.5;
+  //twist_object.angular.z = 0.5;
   return twist_object;
 }
 

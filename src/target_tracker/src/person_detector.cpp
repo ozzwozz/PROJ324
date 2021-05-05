@@ -36,7 +36,15 @@ cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
 
     cv::Mat targets_filtered = shirtColour(Frame);
 
-    cv::Rect Target_Box = pixelcount(targets_filtered, foundLocations);
+      cv::Rect Target_Box;
+    if (foundLocations.size() > 0)
+    {
+      Target_Box = pixelcount(targets_filtered, foundLocations);
+    }
+    else
+    {
+      ROS_INFO("No targets detected");
+    }
 
     if (Target_Box.area() > 0)
     {
@@ -73,6 +81,11 @@ cv::Point person_detector::person_tracker(cv::Mat OriginalFrame)
           predictionTracker++;
         }
         //target_follow_point = predictive_points[predictionTracker];
+      }
+      else
+      {
+        // empty all predictive_points
+
       }
 
     }
