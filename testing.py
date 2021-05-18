@@ -9,8 +9,8 @@ def main():
         Actual_Loc = Line[0].split(",") # [0] is x, [1] is y
         Predictied_Loc = Line[1].split(",")# [0] is x, [1] is y
 
-        x_accuracy = (Actual_Loc[0]/Predictied_Loc[0]) * 100
-        y_accuracy = (Actual_Loc[1]/Predictied_Loc[1]) * 100
+        x_accuracy = (Actual_Loc[0]/Predicted_Loc[0]) * 100
+        y_accuracy = (Actual_Loc[1]/Predicted_Loc[1]) * 100
 
 
         print("Location",x,"x_accuracy",x_accuracy,"y_accuracy", y_accuracy)
